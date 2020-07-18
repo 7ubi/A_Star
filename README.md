@@ -11,6 +11,7 @@ open command line (cmd on Windows) -> type: python (Path, where File is saved)\a
 
 #Tutorial:
 
+"space" -> start pathfinding
 "s" -> sets Start position at mouse position
 "e" -> sets End position at mouse position
 "r" -> reset everything

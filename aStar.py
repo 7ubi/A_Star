@@ -41,12 +41,14 @@ screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption("a*")
 
 
-def dist(x1, y1, x2, y2):
-    return math.dist([x1, y1], [x2, y2])
+def distance(x1, y1, x2, y2):
+	dx = x1 - x2
+	dy = y1 - y2
+	return math.sqrt(dx * dx + dy * dy)
 
 
 def heuristic(c, end):
-    return math.dist([c.i, c.j], [end.i, end.j])
+    return distance(c.i, c.j, end.i, end.j)
 
 def drawCells():
 	screen.fill(pygame.Color(0, 0, 0))
@@ -60,7 +62,7 @@ def drawCells():
 		c.show(screen, pygame.Color(135, 239, 255))
 
 	for c in path:
-		c.show(screen, pygame.Color(99, 255, 151))
+		c.show(screen, pygame.Color(50, 168, 60))
 	start.show(screen, pygame.Color(255, 148, 148))
 	end.show(screen, pygame.Color(255, 0, 0))
 
@@ -87,7 +89,7 @@ def aStar():
 
 		for n in current.neighbors:
 			if not n in closedList and not n.isWall:
-				tempG = current.g + dist(current.i, current.j, n.i, n.j)
+				tempG = current.g + distance(current.i, current.j, n.i, n.j)
 
 				newPath = False
 

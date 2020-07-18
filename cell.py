@@ -15,9 +15,6 @@ class Cell:
 
 		self.isWall = False
 
-		if(random.random() < 0.1):
-			self.isWall = True
-
 		self.previous = None
 
 		self.neighbors = []
@@ -27,19 +24,17 @@ class Cell:
 			for m in range(-1, 2): 
 				if (k == 0 and m == 0):
 					continue
-				if (k == -1 and self.i+k < 0):
+				if (k == -1 and self.j+k < 0):
 					continue
-				if (m == -1 and self.j+m < 0):
+				if (m == -1 and self.i+m < 0):
 					continue
-				if (k == 1 and self.i+k > rows - 1):
+				if (k == 1 and self.j+k > rows - 1):
 					continue
-				if (m == 1 and self.j+m > cols - 1):
+				if (m == 1 and self.i+m > cols - 1):
 					continue
 
-				self.neighbors.append(cells[self.i + k][self.j + m]);
+				self.neighbors.append(cells[self.j + k][self.i + m])
       
-    
-
 	def show(self, screen, c):
 		if self.isWall:
 			pygame.draw.rect(screen, pygame.Color(0, 0, 0), (self.i * self.wi, self.j * self.he, self.wi, self.he))

@@ -1,15 +1,15 @@
 # aStar
  a* algorithm visualization
 
-#Requirements: 
+# Requirements: 
 
 Python 3.x and pygame installed
 
-#How to run:
+# How to run:
 
 open command line (cmd on Windows) -> type: python (Path, where File is saved)\aStar.py
 
-#Tutorial:
+# Tutorial:
 
 "space" -> start pathfinding
 "s" -> sets Start position at mouse position
@@ -18,7 +18,7 @@ open command line (cmd on Windows) -> type: python (Path, where File is saved)\a
 left Click -> puts Wall at mouse position
 right Click -> delets Wall at mouse position
 
-#Color meaning:
+# Color meaning:
 
 black -> wall
 red -> start/end
